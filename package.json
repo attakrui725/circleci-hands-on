@@ -3,6 +3,7 @@
   "license": "MIT",
   "scripts": {
     "start": "nuxt",
+    "test": "exit 0",
     "build": "nuxt generate"
   },
   "dependencies": {
