@@ -1,0 +1,11 @@
+{
+  "name": "circleci-hands-on",
+  "license": "MIT",
+  "scripts": {
+    "start": "nuxt",
+    "build": "nuxt generate"
+  },
+  "dependencies": {
+    "nuxt": "^1.2.1"
+  }
+}
