@@ -20,6 +20,8 @@ jobs:
             - ~/workspace/node_modules
       - persist_to_workspace:
           root: .
+          paths:
+            - .
   test:
     working_directory: ~/workspace
     docker:
