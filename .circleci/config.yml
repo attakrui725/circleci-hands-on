@@ -32,13 +32,6 @@ jobs:
       - run:
           name: Test
           command: yarn test
-  deploy-approval:
-    docker:
-      - image: node:9.4.0
-    steps:
-      - run:
-          name: Deploy is Approval
-          command: exit 0
   deploy:
     working_directory: ~/workspace
     docker:
