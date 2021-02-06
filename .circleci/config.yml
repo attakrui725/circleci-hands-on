@@ -1,28 +1,14 @@
-version: 2
+ version: 2
  jobs:
-   build1: # ジョブ名
-     docker: # プライマリ コンテナ イメージを指定します。
-     # dockerhub にあるビルド済みの CircleCI イメージの一覧は、
-     # circleci.com/ja/docs/2.0/circleci-images/ にて参照してください。
-       - image: buildpack-deps:trusty
-
-       - image: postgres:9.4.1 # 1 つの共通ネットワーク内で実行される
-        # セカンダリ サービス コンテナのデータベース イメージを指定します。
-        # 共通ネットワークでは、プライマリ コンテナ上に公開されている
-        # ポートをローカルホストで利用できます。
-         environment: # POSTGRES_USER 認証環境変数を指定します。
-          # 環境変数の使用方法については、
-          # circleci.com/ja/docs/2.0/env-vars/ を参照してください。
-           POSTGRES_USER: root
-#...
-   build2:
-     machine: # Docker 17.06.1-ce および docker-compose 1.14.0 と
-     # 共に Ubuntu バージョン 14.04 イメージを使用する
-     # マシン イメージを指定します。新しいイメージのリリースについては、
-     # CircleCI Discuss の「Announcements」をフォローしてください。
-       image: circleci/classic:201708-01
-#...
-   build3:
-     macos: # macOS 仮想マシンと Xcode バージョン 11.3 を指定します。
-       xcode: "11.3.0"
-# ...
+   build:
+     docker:
+       - image: circleci/ruby:2.4.1
+     steps:
+       - checkout
+       - run: echo "A first hello"
+   build:
+     docker:
+       - image: circleci/ruby:2.4.1
+     steps:
+       - checkout
+       - run: echo "A first hello"
